@@ -11,9 +11,9 @@ function MessageBubble({ message }) {
 
   if (message.role === 'user') {
     return (
-      <div className="ml-auto max-w-[80%]">
-        <div className="rounded-lg p-4 bg-card border border-border">
-          <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+      <div className="ml-auto max-w-[85%] sm:max-w-[80%]">
+        <div className="rounded-lg p-3 sm:p-4 bg-card border border-border">
+          <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">{message.content}</p>
         </div>
       </div>
     );
@@ -21,8 +21,8 @@ function MessageBubble({ message }) {
 
   if (message.error) {
     return (
-      <div className="rounded-lg p-4 bg-destructive/20 border border-destructive">
-        <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+      <div className="rounded-lg p-3 sm:p-4 bg-destructive/20 border border-destructive">
+        <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">{message.content}</p>
       </div>
     );
   }
@@ -1174,14 +1174,14 @@ QUERY END`;
       )}
 
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-        <div className="flex items-center gap-2">
-          <h2 className="text-lg font-semibold">Chat</h2>
-          <Button variant="ghost" size="icon" className="w-6 h-6">
+      <div className="flex items-center justify-between px-3 sm:px-4 md:px-6 py-3 md:py-4 border-b border-border">
+        <div className="flex items-center gap-1 sm:gap-2">
+          <h2 className="text-base sm:text-lg font-semibold">Chat</h2>
+          <Button variant="ghost" size="icon" className="w-6 h-6 hidden sm:flex">
             <Info size={16} className="text-muted-foreground" />
           </Button>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <Button 
             variant="ghost" 
             size="icon"
@@ -1189,37 +1189,37 @@ QUERY END`;
             onClick={handleShareChat}
             disabled={messages.length === 0}
             title="Share chat"
-            className="cursor-pointer"
+            className="cursor-pointer w-8 h-8 sm:w-10 sm:h-10"
           >
-            <Share2 size={18} />
+            <Share2 size={16} className="sm:w-[18px] sm:h-[18px]" />
           </Button>
-          <Button variant="ghost" size="icon">
+          <Button variant="ghost" size="icon" className="hidden md:flex">
             <SlidersHorizontal size={18} />
           </Button>
-          <Button variant="ghost" size="icon">
-            <MoreVertical size={18} />
+          <Button variant="ghost" size="icon" className="w-8 h-8 sm:w-10 sm:h-10">
+            <MoreVertical size={16} className="sm:w-[18px] sm:h-[18px]" />
           </Button>
         </div>
       </div>
 
       {/* Messages Area */}
       <ScrollArea className="flex-1" ref={scrollRef}>
-        <div className="max-w-3xl mx-auto px-6 py-8">
+        <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
           {messages.length === 0 ? (
-            <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
-              <div className="mb-6">
-                <div className="w-20 h-20 mx-auto mb-4 bg-card border-2 border-border rounded-2xl flex items-center justify-center">
-                  <BookOpen size={40} className="text-primary" />
+            <div className="flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] text-center">
+              <div className="mb-4 sm:mb-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-card border-2 border-border rounded-2xl flex items-center justify-center">
+                  <BookOpen size={32} className="text-primary sm:w-10 sm:h-10" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-2">Untitled notebook</h3>
-                <p className="text-sm text-muted-foreground mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-2">Untitled notebook</h3>
+                <p className="text-sm text-muted-foreground mb-4 sm:mb-6">
                   {sources.length} source{sources.length !== 1 ? 's' : ''}
                 </p>
                 
                 {sources.length > 0 && (
-                  <div className="flex flex-col gap-3 mt-6">
-                    <p className="text-xs text-muted-foreground mb-2">Quick Actions</p>
-                    <div className="flex gap-3 justify-center">
+                  <div className="flex flex-col gap-2 sm:gap-3 mt-4 sm:mt-6">
+                    <p className="text-xs text-muted-foreground mb-1 sm:mb-2">Quick Actions</p>
+                    <div className="flex gap-2 sm:gap-3 justify-center">
                       <Button
                         variant="outline"
                         size="sm"
@@ -1227,8 +1227,8 @@ QUERY END`;
                         disabled={isLoading}
                         className="gap-2"
                       >
-                        <FileText size={16} />
-                        Summary
+                        <FileText size={14} className="sm:w-4 sm:h-4" />
+                        <span className="text-xs sm:text-sm">Summary</span>
                       </Button>
                       <Button
                         variant="outline"
@@ -1237,8 +1237,8 @@ QUERY END`;
                         disabled={isLoading}
                         className="gap-2"
                       >
-                        <MessageSquare size={16} />
-                        Q&A
+                        <MessageSquare size={14} className="sm:w-4 sm:h-4" />
+                        <span className="text-xs sm:text-sm">Q&A</span>
                       </Button>
                     </div>
                   </div>
@@ -1246,7 +1246,7 @@ QUERY END`;
               </div>
             </div>
           ) : (
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {messages.map((msg, idx) => (
                 <MessageBubble key={idx} message={msg} />
               ))}
@@ -1265,8 +1265,8 @@ QUERY END`;
       </ScrollArea>
 
       {/* Input Area */}
-      <div className="border-t border-border p-4">
-        <div className="max-w-3xl mx-auto flex items-center gap-2">
+      <div className="border-t border-border p-2 sm:p-3 md:p-4">
+        <div className="max-w-3xl mx-auto flex items-center gap-1 sm:gap-2">
           <input
             ref={fileInputRef}
             type="file"
@@ -1280,20 +1280,21 @@ QUERY END`;
             size="icon"
             onClick={() => fileInputRef.current?.click()}
             disabled={isLoading || !input.trim()}
+            className="w-8 h-8 sm:w-10 sm:h-10 shrink-0"
           >
-            <Paperclip size={18} />
+            <Paperclip size={16} className="sm:w-[18px] sm:h-[18px]" />
           </Button>
-          <div className="flex-1 relative">
+          <div className="flex-1 relative min-w-0">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && (e.preventDefault(), handleSend())}
               placeholder="Start typing..."
               disabled={isLoading}
-              className="pr-24 bg-card border-border"
+              className="pr-16 sm:pr-20 md:pr-24 bg-card border-border text-sm sm:text-base"
             />
-            <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
-              <span className="text-xs text-muted-foreground">
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-0.5 sm:gap-1">
+              <span className="text-xs text-muted-foreground hidden xs:inline">
                 {stats?.documents_in_kb || 0} docs
               </span>
               <Button
@@ -1301,9 +1302,9 @@ QUERY END`;
                 disabled={!input.trim() || isLoading}
                 size="icon"
                 variant="ghost"
-                className="w-8 h-8"
+                className="w-7 h-7 sm:w-8 sm:h-8 shrink-0"
               >
-                <ArrowUpRight size={18} />
+                <ArrowUpRight size={16} className="sm:w-[18px] sm:h-[18px]" />
               </Button>
             </div>
           </div>

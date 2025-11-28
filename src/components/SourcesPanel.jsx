@@ -67,7 +67,7 @@ export default function SourcesPanel({ sources, setSources, onUploadComplete, on
   };
 
   return (
-    <div className="w-80 bg-card border-r border-border flex flex-col h-full relative">
+    <div className="hidden md:flex md:w-64 lg:w-80 bg-card border-r border-border flex-col h-full relative">
       {/* Confirmation Dialog */}
       {showConfirmDialog && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm">
@@ -106,15 +106,15 @@ export default function SourcesPanel({ sources, setSources, onUploadComplete, on
 
       <div className="flex flex-col h-full">
         {/* Header */}
-        <div className="p-4 border-b border-border">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold">Sources</h2>
+        <div className="p-3 md:p-4 border-b border-border">
+          <div className="flex items-center justify-between mb-3 md:mb-4">
+            <h2 className="text-base md:text-lg font-semibold">Sources</h2>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setShowConfirmDialog(true)}
               disabled={clearing || sources.length === 0}
-              className="gap-2 text-xs cursor-pointer"
+              className="gap-1 md:gap-2 text-xs cursor-pointer px-2 md:px-3"
             >
               {clearing ? (
                 <>
@@ -140,7 +140,7 @@ export default function SourcesPanel({ sources, setSources, onUploadComplete, on
         <Button 
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading}
-          className="w-full justify-start gap-2 bg-background hover:bg-accent text-foreground border border-border"
+          className="w-full justify-start gap-2 bg-background hover:bg-accent text-foreground border border-border text-sm"
         >
           {uploading ? (
             <>
@@ -157,7 +157,7 @@ export default function SourcesPanel({ sources, setSources, onUploadComplete, on
       </div>
 
       {/* Search */}
-      <div className="px-4 pb-3">
+      <div className="px-3 md:px-4 pb-3">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
           <Input
@@ -169,7 +169,7 @@ export default function SourcesPanel({ sources, setSources, onUploadComplete, on
 
       {/* Sources List */}
       <ScrollArea className="flex-1">
-        <div className="px-4">
+        <div className="px-3 md:px-4">
           {sources.length > 0 && (
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs text-muted-foreground">

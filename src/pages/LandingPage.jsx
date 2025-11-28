@@ -33,20 +33,21 @@ export default function LandingPage() {
       <div className="relative z-10">
       {/* Navigation */}
       <nav className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-50">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <BookOpen size={28} className="text-primary" />
-              <span className="text-xl font-bold">Literate-Lamp</span>
+              <BookOpen size={24} className="text-primary sm:w-7 sm:h-7" />
+              <span className="text-lg sm:text-xl font-bold">Literate-Lamp</span>
             </div>
-            <div className="flex items-center gap-6">
-              <a href="#features" className="text-sm hover:text-primary transition-colors">Features</a>
-              <a href="#tech" className="text-sm hover:text-primary transition-colors">Tech Stack</a>
-              <a href="#security" className="text-sm hover:text-primary transition-colors">Security</a>
+            <div className="flex items-center gap-3 sm:gap-6">
+              <a href="#features" className="hidden sm:inline text-sm hover:text-primary transition-colors">Features</a>
+              <a href="#tech" className="hidden sm:inline text-sm hover:text-primary transition-colors">Tech Stack</a>
+              <a href="#security" className="hidden md:inline text-sm hover:text-primary transition-colors">Security</a>
               <Link to="/app">
-                <Button className="gap-2">
-                  Get Started
-                  <ArrowRight size={16} />
+                <Button className="gap-1 sm:gap-2 text-sm px-3 sm:px-4">
+                  <span className="hidden xs:inline">Get Started</span>
+                  <span className="xs:hidden">Start</span>
+                  <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                 </Button>
               </Link>
             </div>
@@ -55,59 +56,60 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="outline" className="mb-6 border-green-500 text-green-500">
-            Session-Only Storage • Zero Data Persistence • 100% Private
+          <Badge variant="outline" className="mb-4 sm:mb-6 border-green-500 text-green-500 text-xs sm:text-sm px-3 py-1">
+            <span className="hidden sm:inline">Session-Only Storage • Zero Data Persistence • 100% Private</span>
+            <span className="sm:hidden">Session-Only • Zero Persistence</span>
           </Badge>
-          <h1 className="text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight px-4 sm:px-0">
             Multimodal Document Q&A with Advanced RAG
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
             <span className="text-foreground font-semibold">Your documents are never saved.</span> Upload, ask questions, and get accurate answers with citations. 
             All data exists only during your session and is automatically cleared when you close the application.
           </p>
-          <div className="flex gap-4 justify-center">
-            <Link to="/app">
-              <Button size="lg" className="gap-2">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+            <Link to="/app" className="w-full sm:w-auto">
+              <Button size="lg" className="gap-2 w-full sm:w-auto">
                 Launch Application
                 <ArrowRight size={18} />
               </Button>
             </Link>
-            <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="primary" className="gap-2 !bg-black/70">
+            <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button size="lg" variant="primary" className="gap-2 !bg-black/70 w-full sm:w-auto">
                 <Github size={18} />
                 View on GitHub
               </Button>
             </a>
           </div>
-          <div className="mt-12 flex items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="mt-8 sm:mt-12 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-muted-foreground px-4">
             <div className="flex items-center gap-2">
-              <CheckCircle size={16} className="text-green-500" />
-              <span className="font-semibold text-foreground">Session-Only Storage</span>
+              <CheckCircle size={14} className="text-green-500 sm:w-4 sm:h-4 shrink-0" />
+              <span className="font-semibold text-foreground text-xs sm:text-sm">Session-Only</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle size={16} className="text-green-500" />
-              <span className="font-semibold text-foreground">No Data Persistence</span>
+              <CheckCircle size={14} className="text-green-500 sm:w-4 sm:h-4 shrink-0" />
+              <span className="font-semibold text-foreground text-xs sm:text-sm">No Persistence</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle size={16} className="text-green-500" />
-              <span>300MB RAM</span>
+              <CheckCircle size={14} className="text-green-500 sm:w-4 sm:h-4 shrink-0" />
+              <span className="text-xs sm:text-sm">300MB RAM</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle size={16} className="text-green-500" />
-              <span>Free Tier Ready</span>
+              <CheckCircle size={14} className="text-green-500 sm:w-4 sm:h-4 shrink-0" />
+              <span className="text-xs sm:text-sm">Free Tier</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Key Features */}
-      <section id="features" className="border-t border-border py-20 bg-card">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Core Features</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+      <section id="features" className="border-t border-border py-12 sm:py-16 md:py-20 bg-card">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Core Features</h2>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
               Session-only RAG system with multimodal support and zero data persistence
             </p>
           </div>
@@ -164,16 +166,16 @@ export default function LandingPage() {
       </section>
 
       {/* Memory Optimization */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Memory Optimized Architecture</h2>
-              <p className="text-muted-foreground">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Memory Optimized Architecture</h2>
+              <p className="text-sm sm:text-base text-muted-foreground px-4">
                 Reduced from 3GB to 300MB RAM usage through strategic optimization
               </p>
             </div>
-            <Card className="p-8 bg-black">
+            <Card className="p-4 sm:p-6 md:p-8 bg-black">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -234,11 +236,11 @@ export default function LandingPage() {
       </section>
 
       {/* Tech Stack */}
-      <section id="tech" className="border-t border-border py-20 bg-card">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Technology Stack</h2>
-            <p className="text-muted-foreground">
+      <section id="tech" className="border-t border-border py-12 sm:py-16 md:py-20 bg-card">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Technology Stack</h2>
+            <p className="text-sm sm:text-base text-muted-foreground px-4">
               Built with modern, production-ready technologies
             </p>
           </div>
@@ -268,16 +270,16 @@ export default function LandingPage() {
       </section>
 
       {/* Security Section */}
-      <section id="security" className="py-20">
-        <div className="container mx-auto px-6">
+      <section id="security" className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Session-Only Storage: Our Core Feature</h2>
-              <p className="text-muted-foreground">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 px-4">Session-Only Storage: Our Core Feature</h2>
+              <p className="text-sm sm:text-base text-muted-foreground px-4">
                 <span className="text-foreground font-semibold">Zero data persistence.</span> Your documents are never saved to any database.
               </p>
             </div>
-            <Card className="p-8 border-green-500/30 bg-black">
+            <Card className="p-4 sm:p-6 md:p-8 border-green-500/30 bg-black">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <Shield className="text-green-500 shrink-0 mt-1" size={24} />
@@ -330,24 +332,25 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="border-t border-border py-20 bg-card">
-        <div className="container mx-auto px-6">
+      <section className="border-t border-border py-12 sm:py-16 md:py-20 bg-card">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-muted-foreground mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Ready to Get Started?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 px-4">
               Deploy your own RAG system in minutes. Free tier ready with comprehensive documentation.
             </p>
-            <div className="flex gap-4 justify-center">
-              <Link to="/app">
-                <Button size="lg" className="gap-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Link to="/app" className="w-full sm:w-auto">
+                <Button size="lg" className="gap-2 w-full sm:w-auto">
                   Launch Application
                   <ArrowRight size={18} />
                 </Button>
               </Link>
-              <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="gap-2">
+              <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
                   <FileText size={18} />
-                  API Documentation
+                  <span className="hidden xs:inline">API Documentation</span>
+                  <span className="xs:hidden">API Docs</span>
                   <ExternalLink size={14} />
                 </Button>
               </a>
@@ -357,22 +360,22 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="container mx-auto px-6">
+      <footer className="border-t border-border py-6 sm:py-8">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <BookOpen size={24} className="text-primary" />
-              <span className="font-semibold">Literate-Lamp</span>
+              <BookOpen size={20} className="text-primary sm:w-6 sm:h-6" />
+              <span className="font-semibold text-sm sm:text-base">Literate-Lamp</span>
             </div>
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
               <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors flex items-center gap-1">
-                <Github size={16} />
+                <Github size={14} className="sm:w-4 sm:h-4" />
                 GitHub
               </a>
               <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
                 API Docs
               </a>
-              <span>MIT License</span>
+              <span className="hidden sm:inline">MIT License</span>
             </div>
           </div>
         </div>
