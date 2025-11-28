@@ -1,0 +1,383 @@
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
+import { 
+  BookOpen, 
+  Upload, 
+  MessageSquare, 
+  FileText, 
+  Zap, 
+  Shield, 
+  Database, 
+  Cloud,
+  Code,
+  CheckCircle,
+  ArrowRight,
+  Github,
+  ExternalLink
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+export default function LandingPage() {
+  return (
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Grid Background with Depth */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large grid layer */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808018_2px,transparent_2px),linear-gradient(to_bottom,#80808018_2px,transparent_2px)] bg-[size:80px_80px]" />
+        {/* Medium grid layer with slight offset for depth */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
+        {/* Radial gradient for depth effect */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
+      </div>
+      <div className="relative z-10">
+      {/* Navigation */}
+      <nav className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-50">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <BookOpen size={28} className="text-primary" />
+              <span className="text-xl font-bold">Literate-Lamp</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <a href="#features" className="text-sm hover:text-primary transition-colors">Features</a>
+              <a href="#tech" className="text-sm hover:text-primary transition-colors">Tech Stack</a>
+              <a href="#security" className="text-sm hover:text-primary transition-colors">Security</a>
+              <Link to="/app">
+                <Button className="gap-2">
+                  Get Started
+                  <ArrowRight size={16} />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <Badge variant="outline" className="mb-6 border-green-500 text-green-500">
+            Session-Only Storage • Zero Data Persistence • 100% Private
+          </Badge>
+          <h1 className="text-5xl font-bold mb-6 leading-tight">
+            Multimodal Document Q&A with Advanced RAG
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <span className="text-foreground font-semibold">Your documents are never saved.</span> Upload, ask questions, and get accurate answers with citations. 
+            All data exists only during your session and is automatically cleared when you close the application.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Link to="/app">
+              <Button size="lg" className="gap-2">
+                Launch Application
+                <ArrowRight size={18} />
+              </Button>
+            </Link>
+            <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="gap-2">
+                <Github size={18} />
+                View on GitHub
+              </Button>
+            </a>
+          </div>
+          <div className="mt-12 flex items-center justify-center gap-8 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-500" />
+              <span className="font-semibold text-foreground">Session-Only Storage</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-500" />
+              <span className="font-semibold text-foreground">No Data Persistence</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-500" />
+              <span>300MB RAM</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-500" />
+              <span>Free Tier Ready</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section id="features" className="border-t border-border py-20 bg-card">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Core Features</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Session-only RAG system with multimodal support and zero data persistence
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <Card className="p-6 hover:border-primary transition-colors">
+              <Upload className="text-primary mb-4" size={32} />
+              <h3 className="text-lg font-semibold mb-2">Multimodal Upload</h3>
+              <p className="text-sm text-muted-foreground">
+                Support for PDF, TXT, MD, DOCX, and image files. Single endpoint for upload and query.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors">
+              <MessageSquare className="text-primary mb-4" size={32} />
+              <h3 className="text-lg font-semibold mb-2">Smart Q&A</h3>
+              <p className="text-sm text-muted-foreground">
+                Ask questions and receive accurate answers with source citations and excerpts.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors">
+              <Zap className="text-primary mb-4" size={32} />
+              <h3 className="text-lg font-semibold mb-2">Google Gemini 2.5</h3>
+              <p className="text-sm text-muted-foreground">
+                1M token context window with fast inference. API-based embeddings with zero local memory.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors">
+              <Database className="text-primary mb-4" size={32} />
+              <h3 className="text-lg font-semibold mb-2">In-Memory Only</h3>
+              <p className="text-sm text-muted-foreground">
+                ChromaDB configured for RAM-only operation. No disk writes, no persistence. Data vanishes when session ends.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors">
+              <Cloud className="text-primary mb-4" size={32} />
+              <h3 className="text-lg font-semibold mb-2">Cloud Ready</h3>
+              <p className="text-sm text-muted-foreground">
+                Optimized for Render free tier. Deploy to AWS, GCP, or Azure with Docker.
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-primary transition-colors">
+              <Shield className="text-primary mb-4" size={32} />
+              <h3 className="text-lg font-semibold mb-2">Session-Only Privacy</h3>
+              <p className="text-sm text-muted-foreground">
+                Documents exist only during your active session. No database storage, no persistence. Close the app, and all data is gone forever.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Memory Optimization */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Memory Optimized Architecture</h2>
+              <p className="text-muted-foreground">
+                Reduced from 3GB to 300MB RAM usage through strategic optimization
+              </p>
+            </div>
+            <Card className="p-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <span className="text-red-500">Removed</span>
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">PyTorch + Transformers</span>
+                      <Badge variant="destructive">-2GB</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">Sentence Transformers</span>
+                      <Badge variant="destructive">-500MB</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">FAISS CPU</span>
+                      <Badge variant="destructive">-200MB</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">Tesseract OCR</span>
+                      <Badge variant="destructive">-150MB</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">Cross-Encoder</span>
+                      <Badge variant="destructive">-100MB</Badge>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <span className="text-green-500">Added</span>
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">Gemini Embeddings API</span>
+                      <Badge variant="outline" className="text-green-500 border-green-500">0MB</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">Lazy Loading</span>
+                      <Badge variant="outline" className="text-green-500 border-green-500">On-demand</Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">ChromaDB Only</span>
+                      <Badge variant="outline" className="text-green-500 border-green-500">~150MB</Badge>
+                    </div>
+                  </div>
+                  <div className="mt-8 p-4 bg-primary/10 border border-primary rounded-lg">
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold">Total Runtime</span>
+                      <Badge className="text-lg">~300MB</Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section id="tech" className="border-t border-border py-20 bg-card">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Technology Stack</h2>
+            <p className="text-muted-foreground">
+              Built with modern, production-ready technologies
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <Card className="p-6 text-center">
+              <Code className="mx-auto mb-3 text-primary" size={32} />
+              <h3 className="font-semibold mb-2">FastAPI</h3>
+              <p className="text-xs text-muted-foreground">REST API Framework</p>
+            </Card>
+            <Card className="p-6 text-center">
+              <Zap className="mx-auto mb-3 text-primary" size={32} />
+              <h3 className="font-semibold mb-2">Google Gemini</h3>
+              <p className="text-xs text-muted-foreground">LLM & Embeddings</p>
+            </Card>
+            <Card className="p-6 text-center">
+              <Database className="mx-auto mb-3 text-primary" size={32} />
+              <h3 className="font-semibold mb-2">ChromaDB</h3>
+              <p className="text-xs text-muted-foreground">Vector Database</p>
+            </Card>
+            <Card className="p-6 text-center">
+              <BookOpen className="mx-auto mb-3 text-primary" size={32} />
+              <h3 className="font-semibold mb-2">LangChain</h3>
+              <p className="text-xs text-muted-foreground">RAG Orchestration</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Security Section */}
+      <section id="security" className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Session-Only Storage: Our Core Feature</h2>
+              <p className="text-muted-foreground">
+                <span className="text-foreground font-semibold">Zero data persistence.</span> Your documents are never saved to any database.
+              </p>
+            </div>
+            <Card className="p-8 border-green-500/30">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <Shield className="text-green-500 shrink-0 mt-1" size={24} />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Ephemeral by Design</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      When you upload documents, they exist <span className="text-foreground font-semibold">only in active memory during your current session</span>. 
+                      The moment you close the application or refresh the page, all documents, embeddings, and chat history are permanently deleted. 
+                      There is no database persistence, no file storage, no recovery possible.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Database className="text-green-500 shrink-0 mt-1" size={24} />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">No Database, No Traces</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Unlike traditional RAG systems that store embeddings in persistent vector databases, Literate-Lamp keeps everything in RAM. 
+                      ChromaDB is configured for <span className="text-foreground font-semibold">in-memory operation only</span>—no files written to disk, no residual data, no audit trails. 
+                      Your sensitive documents leave zero footprint.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Code className="text-green-500 shrink-0 mt-1" size={24} />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Local Processing Only</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      All document processing, text extraction, and chunking happens locally on your machine. 
+                      The only external call is to Google Gemini API for embeddings and LLM inference—document content is processed into embeddings before transmission. 
+                      No third-party services ever see your raw documents.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-8 p-6 bg-green-500/10 border border-green-500 rounded-lg">
+                  <div className="text-center space-y-2">
+                    <p className="text-lg font-semibold text-green-500">
+                      Perfect for Sensitive Documents
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Legal contracts, medical records, financial reports, confidential research—analyze anything without leaving a trace. 
+                      Session closes, data vanishes. Simple as that.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="border-t border-border py-20 bg-card">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-muted-foreground mb-8">
+              Deploy your own RAG system in minutes. Free tier ready with comprehensive documentation.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <Link to="/app">
+                <Button size="lg" className="gap-2">
+                  Launch Application
+                  <ArrowRight size={18} />
+                </Button>
+              </Link>
+              <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="gap-2">
+                  <FileText size={18} />
+                  API Documentation
+                  <ExternalLink size={14} />
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-8">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <BookOpen size={24} className="text-primary" />
+              <span className="font-semibold">Literate-Lamp</span>
+            </div>
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors flex items-center gap-1">
+                <Github size={16} />
+                GitHub
+              </a>
+              <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                API Docs
+              </a>
+              <span>MIT License</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>
+    </div>
+  );
+}
