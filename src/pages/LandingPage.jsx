@@ -75,7 +75,7 @@ export default function LandingPage() {
               </Button>
             </Link>
             <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="gap-2">
+              <Button size="lg" variant="primary" className="gap-2 !bg-black/70">
                 <Github size={18} />
                 View on GitHub
               </Button>
