@@ -1279,8 +1279,9 @@ QUERY END`;
             variant="ghost"
             size="icon"
             onClick={() => fileInputRef.current?.click()}
-            disabled={isLoading || !input.trim()}
+            disabled={isLoading}
             className="w-8 h-8 sm:w-10 sm:h-10 shrink-0"
+            title="Upload documents"
           >
             <Paperclip size={16} className="sm:w-[18px] sm:h-[18px]" />
           </Button>
