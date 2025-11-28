@@ -112,7 +112,7 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <Card className="p-6 hover:border-primary transition-colors">
+            <Card className="p-6 hover:border-primary transition-colors bg-black">
               <Upload className="text-primary mb-4" size={32} />
               <h3 className="text-lg font-semibold mb-2">Multimodal Upload</h3>
               <p className="text-sm text-muted-foreground">
@@ -120,7 +120,7 @@ export default function LandingPage() {
               </p>
             </Card>
 
-            <Card className="p-6 hover:border-primary transition-colors">
+            <Card className="p-6 hover:border-primary transition-colors bg-black">
               <MessageSquare className="text-primary mb-4" size={32} />
               <h3 className="text-lg font-semibold mb-2">Smart Q&A</h3>
               <p className="text-sm text-muted-foreground">
@@ -128,7 +128,7 @@ export default function LandingPage() {
               </p>
             </Card>
 
-            <Card className="p-6 hover:border-primary transition-colors">
+            <Card className="p-6 hover:border-primary transition-colors bg-black">
               <Zap className="text-primary mb-4" size={32} />
               <h3 className="text-lg font-semibold mb-2">Google Gemini 2.5</h3>
               <p className="text-sm text-muted-foreground">
@@ -136,7 +136,7 @@ export default function LandingPage() {
               </p>
             </Card>
 
-            <Card className="p-6 hover:border-primary transition-colors">
+            <Card className="p-6 hover:border-primary transition-colors bg-black">
               <Database className="text-primary mb-4" size={32} />
               <h3 className="text-lg font-semibold mb-2">In-Memory Only</h3>
               <p className="text-sm text-muted-foreground">
@@ -144,7 +144,7 @@ export default function LandingPage() {
               </p>
             </Card>
 
-            <Card className="p-6 hover:border-primary transition-colors">
+            <Card className="p-6 hover:border-primary transition-colors bg-black">
               <Cloud className="text-primary mb-4" size={32} />
               <h3 className="text-lg font-semibold mb-2">Cloud Ready</h3>
               <p className="text-sm text-muted-foreground">
@@ -152,7 +152,7 @@ export default function LandingPage() {
               </p>
             </Card>
 
-            <Card className="p-6 hover:border-primary transition-colors">
+            <Card className="p-6 hover:border-primary transition-colors bg-black">
               <Shield className="text-primary mb-4" size={32} />
               <h3 className="text-lg font-semibold mb-2">Session-Only Privacy</h3>
               <p className="text-sm text-muted-foreground">
@@ -173,7 +173,7 @@ export default function LandingPage() {
                 Reduced from 3GB to 300MB RAM usage through strategic optimization
               </p>
             </div>
-            <Card className="p-8">
+            <Card className="p-8 bg-black">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -243,22 +243,22 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <Card className="p-6 text-center">
+            <Card className="p-6 text-center bg-black">
               <Code className="mx-auto mb-3 text-primary" size={32} />
               <h3 className="font-semibold mb-2">FastAPI</h3>
               <p className="text-xs text-muted-foreground">REST API Framework</p>
             </Card>
-            <Card className="p-6 text-center">
+            <Card className="p-6 text-center bg-black">
               <Zap className="mx-auto mb-3 text-primary" size={32} />
               <h3 className="font-semibold mb-2">Google Gemini</h3>
               <p className="text-xs text-muted-foreground">LLM & Embeddings</p>
             </Card>
-            <Card className="p-6 text-center">
+            <Card className="p-6 text-center bg-black">
               <Database className="mx-auto mb-3 text-primary" size={32} />
               <h3 className="font-semibold mb-2">ChromaDB</h3>
               <p className="text-xs text-muted-foreground">Vector Database</p>
             </Card>
-            <Card className="p-6 text-center">
+            <Card className="p-6 text-center bg-black">
               <BookOpen className="mx-auto mb-3 text-primary" size={32} />
               <h3 className="font-semibold mb-2">LangChain</h3>
               <p className="text-xs text-muted-foreground">RAG Orchestration</p>
@@ -277,7 +277,7 @@ export default function LandingPage() {
                 <span className="text-foreground font-semibold">Zero data persistence.</span> Your documents are never saved to any database.
               </p>
             </div>
-            <Card className="p-8 border-green-500/30">
+            <Card className="p-8 border-green-500/30 bg-black">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <Shield className="text-green-500 shrink-0 mt-1" size={24} />
