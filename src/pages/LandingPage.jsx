@@ -132,9 +132,9 @@ export default function LandingPage() {
 
             <Card className="p-6 hover:border-primary transition-colors bg-black">
               <Zap className="text-primary mb-4" size={32} />
-              <h3 className="text-lg font-semibold mb-2">Google Gemini 2.5</h3>
+              <h3 className="text-lg font-semibold mb-2">Advanced NLP</h3>
               <p className="text-sm text-muted-foreground">
-                1M token context window with fast inference. API-based embeddings with zero local memory.
+                PyTorch-based models for embeddings and text processing. Local inference with zero external dependencies for document understanding.
               </p>
             </Card>
 
@@ -175,7 +175,7 @@ export default function LandingPage() {
                 Reduced from 3GB to 300MB RAM usage through strategic optimization
               </p>
             </div>
-            <Card className="p-4 sm:p-6 md:p-8 bg-black">
+            {/* <Card className="p-4 sm:p-6 md:p-8 bg-black">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -230,7 +230,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
@@ -252,8 +252,23 @@ export default function LandingPage() {
             </Card>
             <Card className="p-6 text-center bg-black">
               <Zap className="mx-auto mb-3 text-primary" size={32} />
-              <h3 className="font-semibold mb-2">Google Gemini</h3>
-              <p className="text-xs text-muted-foreground">LLM & Embeddings</p>
+              <h3 className="font-semibold mb-2">PyTorch</h3>
+              <p className="text-xs text-muted-foreground">Deep Learning Framework</p>
+            </Card>
+            <Card className="p-6 text-center bg-black">
+              <Database className="mx-auto mb-3 text-primary" size={32} />
+              <h3 className="font-semibold mb-2">Sentence Transformers</h3>
+              <p className="text-xs text-muted-foreground">Text Embeddings</p>
+            </Card>
+            <Card className="p-6 text-center bg-black">
+              <BookOpen className="mx-auto mb-3 text-primary" size={32} />
+              <h3 className="font-semibold mb-2">FAISS</h3>
+              <p className="text-xs text-muted-foreground">Vector Search</p>
+            </Card>
+            <Card className="p-6 text-center bg-black">
+              <Code className="mx-auto mb-3 text-primary" size={32} />
+              <h3 className="font-semibold mb-2">Tesseract OCR</h3>
+              <p className="text-xs text-muted-foreground">Text Extraction</p>
             </Card>
             <Card className="p-6 text-center bg-black">
               <Database className="mx-auto mb-3 text-primary" size={32} />
@@ -308,9 +323,9 @@ export default function LandingPage() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Local Processing Only</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      All document processing, text extraction, and chunking happens locally on your machine. 
-                      The only external call is to Google Gemini API for embeddings and LLM inference—document content is processed into embeddings before transmission. 
-                      No third-party services ever see your raw documents.
+                      All document processing, text extraction, and chunking happens locally on your machine using PyTorch, Sentence Transformers, FAISS, and Tesseract OCR. 
+                      Complete local inference for embeddings and document understanding—no external API calls required. 
+                      Your documents are processed entirely on your device with zero external transmission.
                     </p>
                   </div>
                 </div>
